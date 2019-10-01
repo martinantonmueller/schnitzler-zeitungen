@@ -12,23 +12,19 @@ PROJECT_NAME = "schnitzler_zeitungen"
 ACDH_IMPRINT_URL = "https://shared.acdh.oeaw.ac.at/acdh-common-assets/api/imprint.php?serviceID="
 REDMINE_ID = 10459
 
+
 # Application definition
 
 INSTALLED_APPS = [
-    'dal',
     'django.contrib.admin',
-    'dal_select2',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'reversion',
     'crispy_forms',
-    'django_filters',
-    'django_tables2',
-    'rest_framework',
     'webpage',
+    'transkribus',
 ]
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
@@ -45,7 +41,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'reversion.middleware.RevisionMiddleware',
 ]
 
 ROOT_URLCONF = 'schnitzler_zeitungen.urls'
