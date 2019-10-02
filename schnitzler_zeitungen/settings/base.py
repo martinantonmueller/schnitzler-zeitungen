@@ -10,8 +10,7 @@ PROJECT_NAME = "schnitzler_zeitungen"
 
 
 ACDH_IMPRINT_URL = "https://shared.acdh.oeaw.ac.at/acdh-common-assets/api/imprint.php?serviceID="
-REDMINE_ID = 10459
-
+REDMINE_ID = 15042
 
 # Application definition
 
