@@ -35,7 +35,12 @@ header.masthead {
 }
 
 .navbar {
-	border-bottom: 5px solid #254aa5;;
+	border-bottom: 5px solid gray;
+}
+
+.navbar .navbar-brand img {
+    max-height: none;
+    height: 4rem;
 }
 
 span.select2-container--default .select2-selection--single .select2-selection__rendered {
