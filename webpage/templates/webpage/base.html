@@ -53,12 +53,12 @@
     {% block scriptHeader %}
     {% endblock %}
 </head>
-<body role="document" class="home contained fixed-nav" id="body">
+<body role="document" class="fixed-nav" id="body">
     <div class="hfeed site" id="page">
         <div class="wrapper-fluid wrapper-navbar sticky-navbar" id="wrapper-navbar" itemscope="" itemtype="http://schema.org/WebSite">
             <a class="skip-link screen-reader-text sr-only" href="#content">Skip to content</a>
             <nav class="navbar navbar-expand-lg navbar-light">
-                <div class="container-fluid">
+                <div class="container">
                     <!-- Your site title as branding in the menu -->
                     <a href="/" class="navbar-brand custom-logo-link" rel="home" itemprop="url">
                         <img src="{{ SHARED_URL }}schnitzler-zeitungen/project-logo.svg" class="img-fluid" alt="{% projects_metadata 'title' %}" itemprop="{% projects_metadata 'title' %}"/>
@@ -69,16 +69,28 @@
                     <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                         <!-- Your menu goes here -->
                         <ul id="main-menu" class="navbar-nav">
+                          <!-- Suchen -->
+                            <li class="nav-item">
+                              <a title="Search" href="{% url 'transkribus:trp_hits' %}" class="nav-link">Suchen</a>
+                            </li>
+                          <!-- /Suchen -->
+                          <!-- Stöbern -->
+                            <li class="nav-item">
+                              <a title="Browse" href="{% url 'transkribus:trp_docs' %}" class="nav-link">Stöbern</a>
+                            </li>
+                          <!-- /Stöbern -->
+                          <!-- Info -->
                             <li class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Info
                                     <span class="caret"/>
                                 </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{% url 'webpage:staticpage' template='about' %}">Über das Projekt</a>
-                                        <a class="dropdown-item" href="https://schnitzler.acdh.oeaw.ac.at">Mehr Schnitzler (am ACDH)</a>
+                                        <a class="dropdown-item" href="https://schnitzler.acdh.oeaw.ac.at">Schnitzler am ACDH</a>
                                         <a class="dropdown-item" href="{% url 'webpage:staticpage' template='imprint' %}">Imprint | Impressum</a>
                                     </div>
                                 </li>
+                                <!-- /Info -->
                             </ul>
                         </div>
                         <!-- .collapse navbar-collapse -->
