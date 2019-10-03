@@ -1,0 +1,87 @@
+{% extends "webpage/base.html" %}
+{% load staticfiles %}
+{% load webpage_extras %}
+{% block title %} Suchtipps {% endblock %}
+{% block content %}
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h1 class="card-title">Tipps zur Suche</h1>
+        </div>
+        <div class="card-body">
+          <p>Die der Suchfunktion zugrunde liegende Technik ist <a href="https://lucene.apache.org/solr/">Solr</a>. Für den erweiterten Gebrauch sei auf einige einfache Funktionen verwiesen:</p>
+
+          <h3>Wildcards</h3>
+          <table class="table">
+            <!-- <thead>
+              <tr>
+                <td scope="col">Suchstring</td>
+                <td scope="col">Ergebnis</td>
+              <tr>
+            </thead>
+            -->
+            <tbody>
+              <tr>
+                <td>Beer</td>
+                <td>
+                  <ul style="list-style:none;">
+                    <li>Beer</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>Beer<strong>*</strong></td>
+                <td>
+                  <ul style="list-style:none;">
+                    <li>Beer</li>
+                    <li>Beeren</li>
+                    <li>Beer-Hofmann</li>
+                    <li>...</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>Art<strong>?</strong>ur</td>
+                <td>
+                  <ul style="list-style:none;">
+                    <li>Artur</li>
+                    <li>Arthur</li>
+                    <li>Artnur</li>
+                    <li>...</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+
+          </table>
+
+          <h3>Abstandssuche</h3>
+          <p>Die Abstandsuche erlaubt, Wörter in unmittelbarer Nähe zu suchen. Hier beispielsweise dürfen zwischen “Anatol” und “Max” höchstens fünf Wörter liegen:
+</p>
+<table class="table">
+  <!-- <thead>
+    <tr>
+      <td scope="col">Suchstring</td>
+      <td scope="col">Ergebnis</td>
+    <tr>
+  </thead> -->
+  <tbody>
+    <tr>
+      <td>"Anatol Max"~5</td>
+      <td>
+        <ul style="list-style:none;">
+          <li>Anatol confides to Max his </li>
+          <li>Anatol, Max</li>
+          <li>Anatol und Max</li>
+          <li>Anatol. Mar-hoz hozza öket a regényes Anatol.</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+
+</table>
+<p>Für weiterführende Anleitungen siehe die <a href="https://lucene.apache.org/solr/guide/6_6/the-standard-query-parser.html#TheStandardQueryParser-WildcardSearches">Website</a> von Solr.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
