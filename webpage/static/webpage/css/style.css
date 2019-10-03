@@ -7,6 +7,7 @@ body {
     flex-direction: column;
     height: 100%;
     font-family: 'Libre Franklin', sans-serif;
+    background-color: #ffffff;
 }
 
 header.masthead {
@@ -273,4 +274,8 @@ footer {
 
 a > .fa-2x {
     color: #444;
+}
+
+.card-header {
+  background-color: #ffffff;
 }
